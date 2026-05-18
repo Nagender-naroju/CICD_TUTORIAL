@@ -1,0 +1,9 @@
+name: CICD_Learning
+on: ["push", "workflow_dispatch"]
+jobs:
+  Build:
+    runs-on: ubuntu-latest
+
+  steps:
+    - name: Test steps
+      run: echo "Hello Nagender"
