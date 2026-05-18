@@ -6,10 +6,19 @@ jobs:
     env:
       NAME: Nagender
     steps:
-      - name: Test steps
-        env:
-          NAME: Nagender
-        run: echo "Hello $NAME"
+      - name: Create a file
+        run: echo "I won't live long" > my_file.txt
 
-      - name: Another Step
-        run: echo "Hello ${{ env.NAME }}"
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: my-artifact
+          path: my_file.txt
+
+      - name: Download Artifact
+        uses: actions/download-artifact@v8
+        with:
+          name: my-artifact
+
+      - name: View the artifact
+        run: cat my_file.txt
