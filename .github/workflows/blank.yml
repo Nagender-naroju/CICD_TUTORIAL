@@ -4,5 +4,7 @@ jobs:
   Build:
     runs-on: ubuntu-latest
     steps:
-       - name: Test steps
-         run: echo "Hello Nagender"
+      - name: Test steps
+        env:
+          NAME: Nagender
+        run: echo "Hello $NAME"
