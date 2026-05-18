@@ -8,3 +8,6 @@ jobs:
         env:
           NAME: Nagender
         run: echo "Hello $NAME"
+
+      - name: Another Step
+        run: echo "Hello $NAME"
